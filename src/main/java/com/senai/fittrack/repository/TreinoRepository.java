@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface TreinoRepository extends JpaRepository<Treino, Long> {
 	List<Treino> findByUsuarioId(Long usuarioId);
+	boolean existsByUsuarioIdAndNome(Long usuarioId, String nome);
 }
