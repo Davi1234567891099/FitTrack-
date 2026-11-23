@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitTrack - Evolução</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div><p class="eyebrow">FITTRACK</p><h1>Acompanhe sua evolução</h1></div>
+      <p id="status" class="status">Entre para consultar seus registros.</p>
+    </header>
+
+    <section id="login-card" class="card login-card">
+      <h2>Entrar</h2>
+      <form id="login-form">
+        <label>E-mail<input id="email" type="email" required placeholder="voce@email.com"></label>
+        <label>Senha<input id="senha" type="password" required placeholder="Sua senha"></label>
+        <button type="submit">Acessar painel</button>
+      </form>
+      <p class="hint">Ainda não tem conta? Cadastre-se pela rota <code>POST /api/auth/cadastro</code>.</p>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="stats">
+        <article class="card"><span>Registros exibidos</span><strong id="total-registros">0</strong></article>
+        <article class="card"><span>Maior carga</span><strong id="maior-carga">-</strong></article>
+        <article class="card"><span>Exercícios</span><strong id="total-exercicios">0</strong></article>
+      </div>
+      <section class="card chart-card">
+        <div class="section-title"><div><h2>Progressão de carga</h2><p>Maior carga registrada em cada dia e exercício.</p></div><button id="atualizar" type="button" class="secondary">Atualizar</button></div>
+        <canvas id="grafico" width="900" height="360" aria-label="Gráfico de evolução de carga"></canvas>
+        <p id="sem-dados" class="empty" hidden>Nenhuma série registrada ainda. Cadastre um treino, registre uma série e volte aqui.</p>
+      </section>
+      <section class="card"><h2>Histórico de evolução</h2><div class="table-wrap"><table><thead><tr><th>Data</th><th>Exercício</th><th>Maior carga</th><th>Séries</th></tr></thead><tbody id="historico"></tbody></table></div></section>
+    </section>
+  </main>
+  <script src="/js/app.js"></script>
+</body>
+</html>
