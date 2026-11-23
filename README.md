@@ -42,6 +42,15 @@ No diretório do projeto:
 
 Abra [http://localhost:8080](http://localhost:8080) para acessar o painel de evolução. Cadastre o primeiro usuário pela rota abaixo e entre no painel usando o e-mail e a senha cadastrados.
 
+Na primeira inicialização, o sistema cria automaticamente um administrador para facilitar os testes:
+
+```text
+E-mail: admin@fittrack.com
+Senha: admin123
+```
+
+Altere essas credenciais em `application.properties` antes de publicar o sistema.
+
 ## Testes
 
 ```powershell
